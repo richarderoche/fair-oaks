@@ -1,26 +1,68 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import 'tailwindcss';
+@import './css/_vars.css';
+@import './css/_lenis.css';
+@import './css/_prose.css';
+@import './css/_utilities.css';
+@plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--instrument-sans);
+  --font-serif: var(--instrument-serif);
+  --font-mono: var(--sono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* (mirror in _vars.css if edited) */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 37.5rem; /* 600px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+  --breakpoint-2xl: 90rem; /* 1440px */
+  --breakpoint-3xl: 105rem; /* 1680px */
+
+  --color-blue: oklch(0.5354 0.19 257);
+  --color-cream: oklch(0.9328 0.0154 48.55);
+  --color-red: oklch(0.4198 0.0999 33.03);
+  --color-yellow: oklch(0.7892 0.1317 91.65);
+  --color-accent: var(--color-blue);
+
+  --leading-*: initial;
+  --tracking-*: initial;
+
+  --spacing: 0.0625rem;
+  --spacing-em: 1em;
+  --spacing-gut: var(--gut);
+  --spacing-gut-half: calc(var(--gut) / 2);
+  --spacing-outdent: -0.065em;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply antialiased min-w-[320px] bg-blue selection:bg-accent;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+/* Type Styles */
+
+.ts-p-md {
+  @apply leading-140 text-16 2xl:text-20;
+}
+
+.ts-h1 {
+  @apply leading-120 -tracking-3 font-bold text-32 2xl:text-48;
+}
+
+.ts-h2 {
+  @apply leading-120 -tracking-3 font-bold text-24 2xl:text-36;
+}
+
+.ts-h3 {
+  @apply leading-120 -tracking-3 font-bold text-20 2xl:text-28;
+}
+
+.inline-link {
+  @apply nice-underline transition-opacity hover:opacity-50;
 }

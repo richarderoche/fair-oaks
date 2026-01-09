@@ -1,5 +1,5 @@
-import { HomeIcon } from '@sanity/icons'
-import { defineField, defineType } from 'sanity'
+import {HomeIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'home',
@@ -9,7 +9,6 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      description: 'This field is the title of your personal website.',
       title: 'Title',
       type: 'string',
       validation: (rule) => rule.required(),
@@ -29,7 +28,7 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare({ title }) {
+    prepare({title}) {
       return {
         subtitle: 'Home',
         title,

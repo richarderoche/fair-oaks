@@ -1,13 +1,9 @@
 import { getFileAsset } from '@sanity/asset-utils'
-import Link from 'next/link'
 import {
   PortableText,
   type PortableTextBlock,
   type PortableTextComponents,
 } from 'next-sanity'
-
-import { dataset, projectId } from '@/sanity/lib/api'
-import { resolveHref } from '@/sanity/lib/utils'
 
 export function CustomPortableText({ value }: { value: PortableTextBlock[] }) {
   const components: PortableTextComponents = {
@@ -35,20 +31,10 @@ export function CustomPortableText({ value }: { value: PortableTextBlock[] }) {
           </a>
         )
       },
-      internalLink: ({ children, value }) => {
-        const { slug = {}, type = 'page' } = value
-        const href = resolveHref(type, slug.current)
-
-        return (
-          <Link className="inline-link not-prose" href={href || '/'}>
-            {children}
-          </Link>
-        )
-      },
       fileLink: ({ children, value }) => {
         const url = getFileAsset(value.file.asset, {
-          projectId: projectId,
-          dataset: dataset,
+          projectId: 'mzorz60q',
+          dataset: 'production',
         }).url
         return (
           <a

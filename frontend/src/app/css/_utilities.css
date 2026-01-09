@@ -1,0 +1,33 @@
+@utility grid-stack {
+  grid-area: 1 / -1;
+}
+
+@utility nice-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@utility text-* {
+  font-size: calc(var(--spacing) * --value(number));
+}
+
+@utility leading-* {
+  line-height: calc(--value(number) / 100);
+}
+
+@utility tracking-* {
+  letter-spacing: calc(--value(number) * 0.01em);
+}
+
+@utility -tracking-* {
+  letter-spacing: calc((--value(number) * -1) * 0.01em);
+}
