@@ -47,20 +47,24 @@ button {
 
 /* Type Styles */
 
+.ts-p-lg {
+  @apply leading-120 text-21 2xl:text-24;
+}
+
 .ts-p-md {
-  @apply leading-140 text-16 2xl:text-20;
+  @apply leading-140 2xl:leading-130 text-18 2xl:text-20;
 }
 
 .ts-h1 {
-  @apply leading-120 -tracking-3 font-bold text-32 2xl:text-48;
+  @apply font-serif -tracking-1 leading-none text-32 2xl:text-48;
 }
 
 .ts-h2 {
-  @apply leading-120 -tracking-3 font-bold text-24 2xl:text-36;
+  @apply font-serif leading-none uppercase text-24 2xl:text-32;
 }
 
 .ts-h3 {
-  @apply leading-120 -tracking-3 font-bold text-20 2xl:text-28;
+  @apply font-mono leading-130 uppercase font-medium text-14 2xl:text-16;
 }
 
 .inline-link {
