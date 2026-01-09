@@ -1,14 +1,9 @@
 :root {
-  --gut: 1.25rem;
-}
-@media (min-width: 37.5rem) {
-  :root {
-    --gut: 1.5rem;
-  }
+  --gut: 1.125rem; /* 18px */
 }
 @media (min-width: 48rem) {
   :root {
-    --gut: 1.75rem;
+    --gut: 1.5rem;
   }
 }
 @media (min-width: 64rem) {
@@ -19,15 +14,5 @@
 @media (min-width: 80rem) {
   :root {
     --gut: 1.5rem;
-  }
-}
-@media (min-width: 90rem) {
-  :root {
-    --gut: 1.75rem;
-  }
-}
-@media (min-width: 105rem) {
-  :root {
-    --gut: 2rem;
   }
 }

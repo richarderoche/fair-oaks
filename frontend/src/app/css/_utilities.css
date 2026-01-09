@@ -31,3 +31,25 @@
 @utility -tracking-* {
   letter-spacing: calc((--value(number) * -1) * 0.01em);
 }
+
+@utility gradient-blue-fade {
+  background-image: linear-gradient(
+    to bottom,
+    oklch(var(--blue-oklch) / 0) 0%,
+    oklch(var(--blue-oklch) / 0.013) 8.6%,
+    oklch(var(--blue-oklch) / 0.049) 17.5%,
+    oklch(var(--blue-oklch) / 0.104) 26.5%,
+    oklch(var(--blue-oklch) / 0.175) 35.7%,
+    oklch(var(--blue-oklch) / 0.259) 44.6%,
+    oklch(var(--blue-oklch) / 0.352) 53.3%,
+    oklch(var(--blue-oklch) / 0.45) 61.7%,
+    oklch(var(--blue-oklch) / 0.55) 69.6%,
+    oklch(var(--blue-oklch) / 0.648) 76.9%,
+    oklch(var(--blue-oklch) / 0.741) 83.4%,
+    oklch(var(--blue-oklch) / 0.825) 89%,
+    oklch(var(--blue-oklch) / 0.896) 93.6%,
+    oklch(var(--blue-oklch) / 0.951) 97.1%,
+    oklch(var(--blue-oklch) / 0.987) 99.2%,
+    oklch(var(--blue-oklch) / 1) 100%
+  );
+}

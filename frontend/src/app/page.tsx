@@ -15,7 +15,7 @@ export default async function Home() {
         <div className="ts-h1">Typestyle H1</div>
         <div className="ts-h2">Typestyle H2</div>
         <div className="ts-h3">Typestyle H3</div>
-        <div className="ts-p-lg">Typestyle P MD</div>
+        <div className="ts-p-lg">Typestyle P LG</div>
         <div className="ts-p-md">Typestyle P MD</div>
       </div>
     </SiteWidth>

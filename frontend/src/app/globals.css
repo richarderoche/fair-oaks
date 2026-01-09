@@ -5,10 +5,15 @@
 @import './css/_utilities.css';
 @plugin "@tailwindcss/typography";
 
+:root {
+  --blue-oklch: 0.5354 0.19 257;
+}
+
 @theme inline {
   --font-sans: var(--instrument-sans);
   --font-serif: var(--instrument-serif);
   --font-mono: var(--sono);
+  --color-blue: oklch(var(--blue-oklch));
 }
 
 @theme {
@@ -21,7 +26,6 @@
   --breakpoint-2xl: 90rem; /* 1440px */
   --breakpoint-3xl: 105rem; /* 1680px */
 
-  --color-blue: oklch(0.5354 0.19 257);
   --color-cream: oklch(0.9328 0.0154 48.55);
   --color-red: oklch(0.4198 0.0999 33.03);
   --color-yellow: oklch(0.7892 0.1317 91.65);
@@ -33,6 +37,15 @@
   --spacing: 0.0625rem;
   --spacing-em: 1em;
   --spacing-gut: var(--gut);
+  --spacing-gut-2x: calc(var(--gut) * 2);
+  --spacing-gut-3x: calc(var(--gut) * 3);
+  --spacing-gut-4x: calc(var(--gut) * 4);
+  --spacing-gut-5x: calc(var(--gut) * 5);
+  --spacing-gut-6x: calc(var(--gut) * 6);
+  --spacing-gut-7x: calc(var(--gut) * 7);
+  --spacing-gut-8x: calc(var(--gut) * 8);
+  --spacing-gut-9x: calc(var(--gut) * 9);
+  --spacing-gut-10x: calc(var(--gut) * 10);
   --spacing-gut-half: calc(var(--gut) / 2);
   --spacing-outdent: -0.065em;
 }
