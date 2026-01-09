@@ -2,13 +2,14 @@ import { getImageDimensions } from '@sanity/asset-utils'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
-import { urlForImage } from '@/sanity/lib/utils'
+import { urlForImage } from '../../sanity/utils'
 
 interface ImageBasicProps {
   alt?: string
   className?: string
   crop?: number
   fitTo?: 'width' | 'height'
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image: any
   priority?: boolean
   sizes?: string
@@ -52,7 +53,7 @@ export default function ImageBasic({
   )
 }
 
-function getNewDimensions(crop, width, height) {
+function getNewDimensions(crop: number, width: number, height: number) {
   const oRatio = width / height
   const shortSide = width < height ? width : height
   // No crop

@@ -10,7 +10,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa6'
 
-const SocialIcon = (name) => {
+const SocialIcon = (name: { name: string }) => {
   switch (name.name) {
     case 'Facebook':
       return <FaFacebookF />

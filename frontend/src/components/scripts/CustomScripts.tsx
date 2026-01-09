@@ -2,11 +2,10 @@
 import 'vanilla-cookieconsent/dist/cookieconsent.css'
 import './cc-ui.css'
 
-import type { ScriptsQueryResult } from '@/sanity.types'
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import * as CookieConsent from 'vanilla-cookieconsent'
-
+import type { ScriptsQueryResult } from '../../../sanity.types'
 export default function CustomScripts({
   customScripts,
   enableProdScripts,
