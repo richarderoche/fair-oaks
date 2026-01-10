@@ -1,4 +1,4 @@
-import {HomeIcon} from '@sanity/icons'
+import {HomeIcon, StackCompactIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
@@ -14,32 +14,31 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'socialIcons',
-      title: 'Social Icons',
-      type: 'array',
-      of: [
-        {
-          type: 'socialLink',
-        },
-      ],
+      title: 'Page Builder',
+      name: 'pbSections',
+      type: 'pbSections',
+      icon: StackCompactIcon,
     }),
     defineField({
       name: 'footerQuote1',
       title: 'Footer Quote 1',
       type: 'string',
       initialValue: 'It is a common fault',
+      description: 'Use a backslash to split the text into multiple lines.',
     }),
     defineField({
       name: 'footerQuote2',
       title: 'Footer Quote 2',
       type: 'string',
       initialValue: 'not to anticipate storms',
+      description: 'Use a backslash to split the text into multiple lines.',
     }),
     defineField({
       name: 'footerQuote3',
       title: 'Footer Quote 3',
       type: 'string',
       initialValue: 'when the sea is calm',
+      description: 'Use a backslash to split the text into multiple lines.',
     }),
   ],
   preview: {
