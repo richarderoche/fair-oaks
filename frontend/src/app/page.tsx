@@ -1,3 +1,4 @@
+import HomeFooter from '@/components/home/homeFooter'
 import SiteWidth from '@/components/shared/SiteWidth'
 import { client } from '@/sanity/client'
 import { homePageQuery } from '@/sanity/queries'
@@ -9,15 +10,18 @@ export default async function Home() {
   const { title } = data
 
   return (
-    <SiteWidth>
-      <div className="flex flex-col gap-20">
-        <div>{title}</div>
-        <div className="ts-h1">Typestyle H1</div>
-        <div className="ts-h2">Typestyle H2</div>
-        <div className="ts-h3">Typestyle H3</div>
-        <div className="ts-p-lg">Typestyle P LG</div>
-        <div className="ts-p-md">Typestyle P MD</div>
-      </div>
-    </SiteWidth>
+    <>
+      <SiteWidth>
+        <div className="flex flex-col gap-20">
+          <div>{title}</div>
+          <div className="ts-h1">Typestyle H1</div>
+          <div className="ts-h2">Typestyle H2</div>
+          <div className="ts-h3">Typestyle H3</div>
+          <div className="ts-p-lg">Typestyle P LG</div>
+          <div className="ts-p-md">Typestyle P MD</div>
+        </div>
+      </SiteWidth>
+      <HomeFooter data={data} />
+    </>
   )
 }

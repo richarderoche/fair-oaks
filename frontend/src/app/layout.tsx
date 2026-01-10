@@ -98,7 +98,7 @@ export default async function RootLayout({
           <main className="grow" id="main-content">
             {children}
           </main>
-          <Footer data={settings} />
+          <Footer />
         </div>
         {enableProdScripts && googletagmanagerID && (
           <GoogleTagManager gtmId={googletagmanagerID} />
