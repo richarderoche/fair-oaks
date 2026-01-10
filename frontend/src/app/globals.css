@@ -3,6 +3,7 @@
 @import './css/_lenis.css';
 @import './css/_prose.css';
 @import './css/_utilities.css';
+@import './css/_stormy.css';
 @plugin "@tailwindcss/typography";
 
 :root {

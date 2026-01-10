@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { forwardRef } from 'react'
 
 interface SiteGridProps {
   children: React.ReactNode
@@ -6,20 +7,23 @@ interface SiteGridProps {
   yGaps?: boolean
 }
 
-export default function SiteGrid({
-  children,
-  className,
-  yGaps = false,
-}: SiteGridProps) {
-  return (
-    <div
-      className={cn(
-        'grid grid-cols-12',
-        yGaps ? 'gap-gut' : 'gap-x-gut',
-        className,
-      )}
-    >
-      {children}
-    </div>
-  )
-}
+const SiteGrid = forwardRef<HTMLDivElement, SiteGridProps>(
+  ({ children, className, yGaps = false }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'grid grid-cols-12',
+          yGaps ? 'gap-gut' : 'gap-x-gut',
+          className
+        )}
+      >
+        {children}
+      </div>
+    )
+  }
+)
+
+SiteGrid.displayName = 'SiteGrid'
+
+export default SiteGrid

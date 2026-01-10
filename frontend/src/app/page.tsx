@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <>
-      <SiteWidth>
+      <SiteWidth className="min-h-screen">
         <div className="flex flex-col gap-20">
           <div>{title}</div>
           <div className="ts-h1">Typestyle H1</div>
