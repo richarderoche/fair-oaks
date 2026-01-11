@@ -16,6 +16,11 @@
   text-decoration-color: transparent;
 }
 
+@utility center-caps {
+  position: relative;
+  bottom: -0.0625em;
+}
+
 @utility no-scrollbar {
   &::-webkit-scrollbar {
     display: none;

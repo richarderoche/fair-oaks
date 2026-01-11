@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'ptSlim',
@@ -7,13 +7,10 @@ export default defineType({
   of: [
     {
       type: 'block',
-      options: {
-        oneLine: true,
-      },
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
+          {title: 'Strong', value: 'strong'},
+          {title: 'Emphasis', value: 'em'},
         ],
         annotations: [
           {

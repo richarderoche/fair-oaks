@@ -1,5 +1,6 @@
 import type { PbBlocks } from '../../../sanity.types'
 
+import { cn } from '@/lib/utils'
 import { type PortableTextBlock } from 'next-sanity'
 import Link from 'next/link'
 import Button from '../shared/Button'
@@ -28,7 +29,10 @@ export default function PbBlocks({ columnBlocks, trueSizes }: PbBlocksProps) {
             return (
               <Divider
                 key={_key}
-                className={block.hideOnMobile ? 'hidden md:block' : 'block'}
+                className={cn(
+                  'bg-yellow',
+                  block.hideOnMobile ? 'hidden md:block' : 'block'
+                )}
               />
             )
           // Email Link Block
@@ -36,7 +40,7 @@ export default function PbBlocks({ columnBlocks, trueSizes }: PbBlocksProps) {
             const email = block.emailAddress ?? ''
             return (
               <div key={_key}>
-                <div className="flex gap-gut-50 items-center ts-h1">
+                <div className="flex gap-gut-25 md:gap-gut-50 items-center ts-h1">
                   <Link
                     href={`mailto:${email}`}
                     target="_blank"
@@ -89,7 +93,7 @@ export default function PbBlocks({ columnBlocks, trueSizes }: PbBlocksProps) {
           // Rich Text Block
           case 'pbBlockText':
             return (
-              <RichTextWrap key={_key}>
+              <RichTextWrap key={_key} className="ts-p-md">
                 <CustomPortableText
                   value={(block.textContent as PortableTextBlock[]) ?? []}
                 />

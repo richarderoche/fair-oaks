@@ -35,7 +35,7 @@ const SocialIcon = (name: { name: string; text: string }) => {
       return <FaLinkedinIn className="block" />
     case 'None':
       return (
-        <span className="leading-none whitespace-nowrap ts-h3 px-[.25em]">
+        <span className="leading-none whitespace-nowrap ts-h3 px-[.25em] center-caps">
           {name.text}
         </span>
       )

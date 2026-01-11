@@ -1,4 +1,5 @@
 import HomeFooter from '@/components/home/homeFooter'
+import HomeHero from '@/components/home/homeHero'
 import PageBuilder from '@/components/pb/PageBuilder'
 import { client } from '@/sanity/client'
 import { homePageQuery } from '@/sanity/queries'
@@ -11,8 +12,11 @@ export default async function Home() {
 
   return (
     <>
+      <HomeHero data={data} />
       {pbSections && pbSections.length > 0 && (
-        <PageBuilder pbSections={pbSections} />
+        <div className="mt-gut-400">
+          <PageBuilder pbSections={pbSections} />
+        </div>
       )}
       <HomeFooter data={data} />
     </>

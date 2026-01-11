@@ -109,7 +109,7 @@ const FooterQuote = forwardRef<
       ref={ref}
       className={cn('stormy-wave col-span-4 md:col-span-2', className)}
     >
-      <Divider className="mb-gut-75 md:mb-gut-150" />
+      <Divider className="bg-yellow mb-gut-75 md:mb-gut-150" />
       {textArray.map((text, index) => (
         <p key={index}>{text}</p>
       ))}

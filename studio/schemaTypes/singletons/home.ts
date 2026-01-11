@@ -14,6 +14,29 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'homeIntroBig',
+      title: 'Home Intro Big',
+      type: 'ptSlim',
+    }),
+    defineField({
+      name: 'homeIntroSmall',
+      title: 'Home Intro Small',
+      type: 'ptSlim',
+    }),
+    defineField({
+      name: 'homeIntroBgImage',
+      title: 'Home Intro Background Image',
+      type: 'image',
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt text',
+          type: 'string',
+          description: 'Describe the image for accessibility compliance',
+        }),
+      ],
+    }),
+    defineField({
       title: 'Page Builder',
       name: 'pbSections',
       type: 'pbSections',

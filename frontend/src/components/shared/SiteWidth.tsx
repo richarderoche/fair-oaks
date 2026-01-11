@@ -7,7 +7,7 @@ interface SiteWidthProps {
 
 export default function SiteWidth({ children, className }: SiteWidthProps) {
   return (
-    <div className={cn('px-gut max-w-[1800px] mx-auto', className)}>
+    <div className={cn('px-gut max-w-[1600px] mx-auto', className)}>
       {children}
     </div>
   )

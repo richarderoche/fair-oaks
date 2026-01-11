@@ -8,8 +8,6 @@ export default function RichTextWrap({
   className?: string
 }) {
   return (
-    <div className={cn('prose prose-siteColor ts-p-md', className)}>
-      {children}
-    </div>
+    <div className={cn('prose prose-siteColor', className)}>{children}</div>
   )
 }
