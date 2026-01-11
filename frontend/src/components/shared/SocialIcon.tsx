@@ -2,6 +2,7 @@ import {
   FaFacebookF,
   FaGithub,
   FaInstagram,
+  FaLinkedinIn,
   FaSoundcloud,
   FaSpotify,
   FaThreads,
@@ -10,7 +11,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa6'
 
-const SocialIcon = (name: { name: string }) => {
+const SocialIcon = (name: { name: string; text: string }) => {
   switch (name.name) {
     case 'Facebook':
       return <FaFacebookF />
@@ -30,6 +31,14 @@ const SocialIcon = (name: { name: string }) => {
       return <FaYoutube />
     case 'Github':
       return <FaGithub />
+    case 'Linkedin':
+      return <FaLinkedinIn />
+    case 'None':
+      return (
+        <span className="leading-none whitespace-nowrap ts-h3 px-[.25em]">
+          {name.text}
+        </span>
+      )
   }
 }
 

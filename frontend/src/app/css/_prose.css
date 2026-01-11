@@ -19,13 +19,29 @@
 
 .prose p,
 .prose li {
-  @apply text-pretty;
+  @apply text-pretty max-w-[50ch];
 }
 
 .prose p:empty {
   @apply min-h-[.1px];
 }
 
-.prose li::marker {
-  @apply text-accent;
+.prose ul,
+.prose ul li {
+  padding-inline-start: 0.7em;
+}
+
+.prose ul {
+  list-style-type: none;
+}
+
+.prose ul li {
+  position: relative;
+}
+
+.prose ul li::before {
+  content: '•';
+  position: absolute;
+  left: -0.7em;
+  @apply text-red;
 }

@@ -1,5 +1,5 @@
-import { PlayIcon } from '@sanity/icons'
-import { defineField, defineType } from 'sanity'
+import {PlayIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'pbBlockVideoEmbed',
@@ -40,9 +40,10 @@ export default defineType({
       videoEmbedUrl: 'videoEmbedUrl',
     },
     prepare(selection) {
-      const { videoEmbedUrl } = selection
+      const {videoEmbedUrl} = selection
       return {
         title: videoEmbedUrl ? videoEmbedUrl : 'No video URL provided',
+        media: PlayIcon,
       }
     },
   },

@@ -1,10 +1,10 @@
-import type { PbGridSettings } from '../../frontend/sanity.types'
+import type {PbGridSettings} from '../../frontend/sanity.types'
 
 //
 // SCHEMA HELPERS
 
 export function getGridSettings(gridSettings: PbGridSettings) {
-  const { size, start } = gridSettings
+  const {size, start} = gridSettings
   if (!start || !size) {
     return ''
   }
@@ -31,6 +31,12 @@ function gridLine(start: number, size: number) {
 export const getTypeTitles = (types: string[]) => {
   const typeNames = types.map((type) => {
     switch (type) {
+      case 'pbBlockDivider':
+        return 'Divider'
+      case 'pbBlockButton':
+        return 'Button'
+      case 'pbBlockSocial':
+        return 'Social Media'
       case 'pbBlockText':
         return 'Text'
       case 'pbBlockImage':

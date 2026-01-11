@@ -20,16 +20,16 @@ export default function Button(props: ButtonProps) {
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
       className={cn(
-        'border text-black rounded-full inline-flex items-center transition-colors',
+        'rounded-full inline-flex items-center transition-colors',
         style === 'main'
-          ? 'border-accent bg-accent hover:border-black hover:bg-black hover:text-accent'
+          ? 'bg-red/10 hover:bg-blue/25'
           : style === 'alt'
             ? 'border-black bg-black text-accent hover:border-accent hover:bg-accent hover:text-black'
             : 'hover:bg-accent',
-        className,
+        className
       )}
     >
-      <span className="leading-none whitespace-nowrap ts-p-md py-[.4em] px-[.8em]">
+      <span className="leading-none whitespace-nowrap ts-h3 py-[.5em] px-[1.25em]">
         {text}
       </span>
     </Link>

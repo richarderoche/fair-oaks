@@ -1,12 +1,12 @@
-import { DashboardIcon } from '@sanity/icons'
-import { defineField, defineType } from 'sanity'
+import {DashboardIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
 
-import { getGridSettings, getTypeTitles } from '../../lib/utils'
+import {getGridSettings, getTypeTitles} from '../../lib/utils'
 
 const vList = [
-  { title: 'Top', value: 'self-start' },
-  { title: 'Middle', value: 'self-center' },
-  { title: 'Bottom', value: 'self-end' },
+  {title: 'Top', value: 'self-start'},
+  {title: 'Middle', value: 'self-center'},
+  {title: 'Bottom', value: 'self-end'},
 ]
 
 export default defineType({
@@ -25,7 +25,13 @@ export default defineType({
       name: 'outerSettings',
       type: 'pbGridSettings',
       description: 'Relative to the full page in steps of 1/12th',
-      options: { collapsible: true, collapsed: false },
+      options: {collapsible: true, collapsed: true},
+    }),
+    defineField({
+      title: 'Section Description (optional)',
+      name: 'sectionName',
+      type: 'string',
+      description: 'For organizational purposes only.',
     }),
     defineField({
       title: 'Inner Columns',
@@ -40,13 +46,13 @@ export default defineType({
               name: 'columnSettings',
               type: 'pbGridSettings',
               description: 'Relative to the parent grid in steps of 1/12th',
-              options: { collapsible: true, collapsed: false },
+              options: {collapsible: true, collapsed: false},
             },
             {
               title: 'Vertical Alignment',
               name: 'yAlignment',
               type: 'object',
-              options: { columns: 3, collapsible: true, collapsed: true },
+              options: {columns: 3, collapsible: true, collapsed: true},
               fields: [
                 {
                   title: 'Mobile',
@@ -65,10 +71,7 @@ export default defineType({
                   initialValue: 'inherit',
                   validation: (Rule) => Rule.required(),
                   options: {
-                    list: [
-                      { title: 'Inherit Mobile', value: 'inherit' },
-                      ...vList,
-                    ],
+                    list: [{title: 'Inherit Mobile', value: 'inherit'}, ...vList],
                   },
                 },
                 {
@@ -78,10 +81,7 @@ export default defineType({
                   initialValue: 'inherit',
                   validation: (Rule) => Rule.required(),
                   options: {
-                    list: [
-                      { title: 'Inherit Tablet', value: 'inherit' },
-                      ...vList,
-                    ],
+                    list: [{title: 'Inherit Tablet', value: 'inherit'}, ...vList],
                   },
                 },
               ],
@@ -97,11 +97,9 @@ export default defineType({
               columnSettings: 'columnSettings',
               columnBlocks: 'pbBlocks',
             },
-            prepare({ columnSettings, columnBlocks }) {
+            prepare({columnSettings, columnBlocks}) {
               const gridSettings = getGridSettings(columnSettings)
-              const types = columnBlocks
-                ? columnBlocks.map((block) => block._type)
-                : []
+              const types = columnBlocks ? columnBlocks.map((block: any) => block._type) : []
               const blockList = getTypeTitles(types)
               return {
                 title: gridSettings,
@@ -115,13 +113,15 @@ export default defineType({
   ],
   preview: {
     select: {
+      sectionName: 'sectionName',
       outerSettings: 'outerSettings',
     },
-    prepare({ outerSettings }) {
+    prepare({sectionName, outerSettings}) {
       const gridSettings = getGridSettings(outerSettings)
       return {
-        title: 'Grid Section',
+        title: sectionName ? `Grid Section: ${sectionName}` : 'Grid Section',
         subtitle: gridSettings,
+        media: DashboardIcon,
       }
     },
   },

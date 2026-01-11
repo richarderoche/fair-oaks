@@ -25,7 +25,7 @@ export default function SectionGrid({ section }: GridSecProps) {
 
   const Columns = (
     <SiteGrid yGaps={true}>
-      {columns.map((col, i) => (
+      {columns.map((col) => (
         <GridCol key={col._key} col={col} outerSettings={outerSettings} />
       ))}
     </SiteGrid>

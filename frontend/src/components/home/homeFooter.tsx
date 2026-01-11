@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { forwardRef, useLayoutEffect, useRef } from 'react'
 import { type Home } from '../../../sanity.types'
+import Divider from '../shared/Divider'
 
 export default function HomeFooter({ data }: { data: Home }) {
   const { footerQuote1, footerQuote2, footerQuote3 } = data
@@ -106,11 +107,9 @@ const FooterQuote = forwardRef<
   return (
     <div
       ref={ref}
-      className={cn(
-        'stormy-wave col-span-4 md:col-span-2 border-t border-yellow pt-gut-75 md:pt-gut-150',
-        className
-      )}
+      className={cn('stormy-wave col-span-4 md:col-span-2', className)}
     >
+      <Divider className="mb-gut-75 md:mb-gut-150" />
       {textArray.map((text, index) => (
         <p key={index}>{text}</p>
       ))}

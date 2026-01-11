@@ -1,5 +1,8 @@
+import pbBlockButton from './objects/pbBlockButton'
+import pbBlockDivider from './objects/pbBlockDivider'
 import pbBlockImage from './objects/pbBlockImage'
 import pbBlocks from './objects/pbBlocks'
+import pbBlockSocial from './objects/pbBlockSocial'
 import pbBlockText from './objects/pbBlockText'
 import pbBlockVideoEmbed from './objects/pbBlockVideoEmbed'
 import pbGrid from './objects/pbGrid'
@@ -20,8 +23,11 @@ export const schemaTypes = [
   home,
   settings,
   // Objects
-  pbBlockImage,
   pbBlocks,
+  pbBlockImage,
+  pbBlockDivider,
+  pbBlockButton,
+  pbBlockSocial,
   pbBlockText,
   pbBlockVideoEmbed,
   pbGrid,

@@ -12,10 +12,13 @@ export function CustomPortableText({ value }: { value: PortableTextBlock[] }) {
         return <p>{children}</p>
       },
       h2: ({ children }) => {
-        return <h2 className="ts-h2 text-balance">{children}</h2>
+        return <h2 className="ts-h1 text-balance">{children}</h2>
       },
       h3: ({ children }) => {
-        return <h3 className="ts-h3 text-pretty">{children}</h3>
+        return <h3 className="ts-h2 text-pretty">{children}</h3>
+      },
+      h4: ({ children }) => {
+        return <h4 className="ts-h3 text-pretty">{children}</h4>
       },
     },
     marks: {

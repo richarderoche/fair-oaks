@@ -1,7 +1,9 @@
 import {
+  IconAbc,
   IconBrandFacebook,
   IconBrandGithub,
   IconBrandInstagram,
+  IconBrandLinkedin,
   IconBrandSoundcloud,
   IconBrandSpotify,
   IconBrandThreads,
@@ -9,10 +11,12 @@ import {
   IconBrandX,
   IconBrandYoutube,
 } from '@tabler/icons-react'
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 const getIcon = (icon: string) => {
   switch (icon) {
+    case 'None':
+      return IconAbc
     case 'Facebook':
       return IconBrandFacebook
     case 'Instagram':
@@ -31,6 +35,8 @@ const getIcon = (icon: string) => {
       return IconBrandGithub
     case 'Tiktok':
       return IconBrandTiktok
+    case 'Linkedin':
+      return IconBrandLinkedin
     default:
       return false
   }
@@ -51,17 +57,26 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Facebook', value: 'Facebook' },
-          { title: 'Instagram', value: 'Instagram' },
-          { title: 'Soundcloud', value: 'Soundcloud' },
-          { title: 'Spotify', value: 'Spotify' },
-          { title: 'X/Twitter', value: 'Twitter' },
-          { title: 'Threads', value: 'Threads' },
-          { title: 'YouTube', value: 'YouTube' },
-          { title: 'Tiktok', value: 'Tiktok' },
-          { title: 'Github', value: 'Github' },
+          {title: 'None (text only)', value: 'None'},
+          {title: 'Facebook', value: 'Facebook'},
+          {title: 'Github', value: 'Github'},
+          {title: 'Instagram', value: 'Instagram'},
+          {title: 'LinkedIn', value: 'Linkedin'},
+          {title: 'Soundcloud', value: 'Soundcloud'},
+          {title: 'Spotify', value: 'Spotify'},
+          {title: 'Threads', value: 'Threads'},
+          {title: 'Tiktok', value: 'Tiktok'},
+          {title: 'X/Twitter', value: 'Twitter'},
+          {title: 'YouTube', value: 'YouTube'},
         ],
       },
+    }),
+    defineField({
+      title: 'Text',
+      name: 'text',
+      type: 'string',
+      // Only show this field if icon is set to 'None'
+      hidden: ({parent}) => parent && parent.icon !== 'None',
     }),
     defineField({
       title: 'URL',
@@ -72,11 +87,12 @@ export default defineType({
   preview: {
     select: {
       icon: 'icon',
+      text: 'text',
       url: 'url',
     },
-    prepare({ icon, url }) {
+    prepare({icon, text, url}) {
       return {
-        title: icon,
+        title: text ? text : icon,
         subtitle: url ? url : '(url not set)',
         media: getIcon(icon),
       }
