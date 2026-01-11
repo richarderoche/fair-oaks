@@ -1,5 +1,6 @@
 import pbBlockButton from './objects/pbBlockButton'
 import pbBlockDivider from './objects/pbBlockDivider'
+import pbBlockEmail from './objects/pbBlockEmail'
 import pbBlockImage from './objects/pbBlockImage'
 import pbBlocks from './objects/pbBlocks'
 import pbBlockSocial from './objects/pbBlockSocial'
@@ -26,6 +27,7 @@ export const schemaTypes = [
   pbBlocks,
   pbBlockImage,
   pbBlockDivider,
+  pbBlockEmail,
   pbBlockButton,
   pbBlockSocial,
   pbBlockText,

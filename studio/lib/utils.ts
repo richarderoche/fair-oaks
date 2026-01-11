@@ -37,6 +37,8 @@ export const getTypeTitles = (types: string[]) => {
         return 'Button'
       case 'pbBlockSocial':
         return 'Social Media'
+      case 'pbBlockEmail':
+        return 'Email Link'
       case 'pbBlockText':
         return 'Text'
       case 'pbBlockImage':

@@ -14,25 +14,25 @@ import {
 const SocialIcon = (name: { name: string; text: string }) => {
   switch (name.name) {
     case 'Facebook':
-      return <FaFacebookF />
+      return <FaFacebookF className="block" />
     case 'Instagram':
-      return <FaInstagram />
+      return <FaInstagram className="block" />
     case 'Soundcloud':
-      return <FaSoundcloud />
+      return <FaSoundcloud className="block" />
     case 'Spotify':
-      return <FaSpotify />
+      return <FaSpotify className="block" />
     case 'Tiktok':
-      return <FaTiktok />
+      return <FaTiktok className="block" />
     case 'Twitter':
-      return <FaXTwitter />
+      return <FaXTwitter className="block" />
     case 'Threads':
-      return <FaThreads />
+      return <FaThreads className="block" />
     case 'YouTube':
-      return <FaYoutube />
+      return <FaYoutube className="block" />
     case 'Github':
-      return <FaGithub />
+      return <FaGithub className="block" />
     case 'Linkedin':
-      return <FaLinkedinIn />
+      return <FaLinkedinIn className="block" />
     case 'None':
       return (
         <span className="leading-none whitespace-nowrap ts-h3 px-[.25em]">

@@ -29,6 +29,7 @@
 
   --color-cream: oklch(0.9328 0.0154 48.55);
   --color-red: oklch(0.4198 0.0999 33.03);
+  --color-red-25: oklch(0.4198 0.0999 33.03 / 0.25);
   --color-yellow: oklch(0.7892 0.1317 91.65);
   --color-accent: var(--color-blue);
 
@@ -85,6 +86,10 @@ button {
   @apply font-mono leading-130 uppercase font-medium text-14 xl:text-16;
 }
 
+.ts-tooltip {
+  @apply font-mono leading-none uppercase font-semibold tracking-5 text-10 xl:text-12;
+}
+
 .inline-link {
-  @apply nice-underline transition-opacity hover:opacity-50;
+  @apply nice-underline transition-colors hover:decoration-blue;
 }

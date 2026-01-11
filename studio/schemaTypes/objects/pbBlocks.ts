@@ -9,6 +9,7 @@ export default defineType({
     {title: 'Image', type: 'pbBlockImage'},
     {title: 'Video', type: 'pbBlockVideoEmbed'},
     {title: 'Divider', type: 'pbBlockDivider'},
+    {title: 'Email Link', type: 'pbBlockEmail'},
     {title: 'Button', type: 'pbBlockButton'},
     {title: 'Social Media', type: 'pbBlockSocial'},
   ],

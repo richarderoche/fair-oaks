@@ -29,7 +29,7 @@ export default function Button(props: ButtonProps) {
         className
       )}
     >
-      <span className="leading-none whitespace-nowrap ts-h3 py-[.5em] px-[1.25em]">
+      <span className="leading-none whitespace-nowrap ts-h3 py-[.6em] px-[1.25em]">
         {text}
       </span>
     </Link>

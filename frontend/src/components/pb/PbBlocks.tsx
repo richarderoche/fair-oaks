@@ -1,7 +1,9 @@
 import type { PbBlocks } from '../../../sanity.types'
 
 import { type PortableTextBlock } from 'next-sanity'
+import Link from 'next/link'
 import Button from '../shared/Button'
+import CopyButton from '../shared/CopyButton'
 import { CustomPortableText } from '../shared/CustomPortableText'
 import Divider from '../shared/Divider'
 import ImageBasic from '../shared/ImageBasic'
@@ -29,6 +31,24 @@ export default function PbBlocks({ columnBlocks, trueSizes }: PbBlocksProps) {
                 className={block.hideOnMobile ? 'hidden md:block' : 'block'}
               />
             )
+          // Email Link Block
+          case 'pbBlockEmail':
+            const email = block.emailAddress ?? ''
+            return (
+              <div key={_key}>
+                <div className="flex gap-gut-50 items-center ts-h1">
+                  <Link
+                    href={`mailto:${email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nice-underline-stealth transition-colors hover:decoration-red/25"
+                  >
+                    {email}
+                  </Link>
+                  <CopyButton email={email} />
+                </div>
+              </div>
+            )
 
           // Button Block
           case 'pbBlockButton':
@@ -51,7 +71,7 @@ export default function PbBlocks({ columnBlocks, trueSizes }: PbBlocksProps) {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center text-20 transition-colors bg-red/10 hover:bg-blue/25 rounded-full p-12"
+                          className="inline-flex items-center justify-center text-20 transition-colors text-blue bg-yellow/25 hover:bg-blue/25 rounded-full p-10 leading-0 h-40"
                           aria-label={link.icon}
                         >
                           <SocialIcon
