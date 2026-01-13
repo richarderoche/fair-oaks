@@ -41,3 +41,20 @@
     oklch(var(--blue-oklch) / 1) 100%
   );
 }
+
+.wipe-mask {
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 45%,
+    transparent 55%,
+    transparent 100%
+  );
+  mask-size: 400% 100%;
+  mask-position: right bottom;
+  transition: all 2s ease-out;
+}
+
+.wipe-mask.show {
+  mask-position: left bottom;
+}

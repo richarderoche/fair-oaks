@@ -1,11 +1,13 @@
 'use client'
+import { cn } from '@/lib/utils'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import LogoWordmark from './svg/LogoWordmark'
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useLayoutEffect(() => {
     if (!headerRef.current) return
@@ -42,12 +44,24 @@ export default function Header() {
     }
   }, [])
 
+  useEffect(() => {
+    if (isLoaded) return
+    setTimeout(() => {
+      setIsLoaded(true)
+    }, 250)
+  }, [isLoaded])
+
   return (
     <header
       ref={headerRef}
       className="text-cream absolute top-0 left-0 w-full overflow-hidden z-99999 pointer-events-none"
     >
-      <LogoWordmark className="text-cream pt-gut h-auto w-[107%] -translate-x-[4.815%]" />
+      <LogoWordmark
+        className={cn(
+          'pt-gut h-auto w-[107%] -translate-x-[4.815%] wipe-mask',
+          isLoaded && 'show'
+        )}
+      />
     </header>
   )
 }
