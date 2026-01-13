@@ -155,7 +155,7 @@ export default function HomeHero({ data }: { data: Home }) {
 
   return (
     <>
-      <div className="bg-blue text-cream pt-header pb-gut-600 w-full overflow-x-hidden isolate min-h-dvw portrait:min-h-[160dvw] landscape:min-h-[65dvw] relative">
+      <div className="bg-blue text-cream pt-header pb-gut-600 w-full overflow-x-hidden isolate relative">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {mounted && backgroundImage && (
             <div ref={imageRef} className="absolute inset-0 opacity-0">

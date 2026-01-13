@@ -87,6 +87,19 @@ export default defineType({
               ],
             },
             {
+              title: 'Reveal Effect',
+              name: 'revealEffect',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'None', value: 'none'},
+                  {title: 'Fade In Up', value: 'fade-up'},
+                  {title: 'Fade In Right', value: 'fade-right'},
+                ],
+              },
+              initialValue: 'none',
+            },
+            {
               title: 'Column Blocks',
               name: 'pbBlocks',
               type: 'pbBlocks',
