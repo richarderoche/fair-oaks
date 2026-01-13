@@ -1,14 +1,21 @@
 import { cn } from '@/lib/utils'
+import { forwardRef } from 'react'
 
 interface SiteWidthProps {
   children: React.ReactNode
   className?: string
 }
 
-export default function SiteWidth({ children, className }: SiteWidthProps) {
-  return (
-    <div className={cn('px-gut max-w-[1600px] mx-auto', className)}>
-      {children}
-    </div>
-  )
-}
+const SiteWidth = forwardRef<HTMLDivElement, SiteWidthProps>(
+  ({ children, className }, ref) => {
+    return (
+      <div ref={ref} className={cn('px-gut max-w-[1600px] mx-auto', className)}>
+        {children}
+      </div>
+    )
+  }
+)
+
+SiteWidth.displayName = 'SiteWidth'
+
+export default SiteWidth

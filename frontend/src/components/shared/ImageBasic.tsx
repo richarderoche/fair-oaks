@@ -8,7 +8,7 @@ interface ImageBasicProps {
   alt?: string
   className?: string
   crop?: number
-  fitTo?: 'width' | 'height'
+  fitTo?: 'width' | 'height' | 'cover'
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image: any
   priority?: boolean
@@ -39,7 +39,11 @@ export default function ImageBasic({
         <Image
           src={imageUrl}
           className={cn(
-            fitTo === 'width' ? 'w-full h-auto' : 'h-full w-auto',
+            fitTo === 'cover'
+              ? 'w-full h-full max-w-none object-cover'
+              : fitTo === 'width'
+                ? 'w-full h-auto'
+                : 'h-full w-auto',
             className
           )}
           alt={alt}

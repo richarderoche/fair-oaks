@@ -40,9 +40,9 @@ export default function HomeFooter({ data }: { data: Home }) {
     const animation = gsap.to(quotes, {
       opacity: 1,
       y: 0,
-      duration: 1.5,
+      duration: 1.25,
       ease: 'power2.out',
-      stagger: 0.25,
+      stagger: 0.2,
     })
 
     // Add ScrollTrigger

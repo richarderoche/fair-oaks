@@ -7,7 +7,7 @@ export default function Footer() {
       <SiteWidth className="flex items-center justify-center">
         <Monogram className="w-120 h-auto py-gut-50" />
       </SiteWidth>
-      <div className="h-gut-600 gradient-blue-fade"></div>
+      <div className="h-gut-500 gradient-blue-fade"></div>
     </footer>
   )
 }

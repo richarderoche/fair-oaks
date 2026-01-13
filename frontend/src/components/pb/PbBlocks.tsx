@@ -2,7 +2,6 @@ import type { PbBlocks } from '../../../sanity.types'
 
 import { cn } from '@/lib/utils'
 import { type PortableTextBlock } from 'next-sanity'
-import Link from 'next/link'
 import Button from '../shared/Button'
 import CopyButton from '../shared/CopyButton'
 import { CustomPortableText } from '../shared/CustomPortableText'
@@ -41,14 +40,7 @@ export default function PbBlocks({ columnBlocks, trueSizes }: PbBlocksProps) {
             return (
               <div key={_key}>
                 <div className="flex gap-gut-25 md:gap-gut-50 items-center ts-h1">
-                  <Link
-                    href={`mailto:${email}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="nice-underline-stealth transition-colors hover:decoration-red/25"
-                  >
-                    {email}
-                  </Link>
+                  <p>{email}</p>
                   <CopyButton email={email} />
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import ConsoleLog from '@/components/scripts/ConsoleLog'
 import CustomScripts from '@/components/scripts/CustomScripts'
 import { GSAP } from '@/components/shared/GSAP'
@@ -95,6 +96,7 @@ export default async function RootLayout({
         <Lenis />
         <GSAP />
         <div className="flex min-h-screen flex-col justify-start bg-cream text-red">
+          <Header />
           <main className="grow" id="main-content">
             {children}
           </main>

@@ -19,7 +19,7 @@
 
 .prose p,
 .prose li {
-  @apply text-pretty max-w-[50ch];
+  @apply text-pretty max-w-[45ch];
 }
 
 .prose p:empty {

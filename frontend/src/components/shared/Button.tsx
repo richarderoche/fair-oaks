@@ -22,7 +22,7 @@ export default function Button(props: ButtonProps) {
       className={cn(
         'rounded-full inline-flex items-center transition-colors',
         style === 'main'
-          ? 'bg-red/10 hover:bg-blue/25'
+          ? 'bg-yellow/25 hover:bg-blue/25 text-blue'
           : style === 'alt'
             ? 'border-black bg-black text-accent hover:border-accent hover:bg-accent hover:text-black'
             : 'hover:bg-accent',

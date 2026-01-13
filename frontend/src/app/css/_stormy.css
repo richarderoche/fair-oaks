@@ -19,9 +19,9 @@
 }
 
 .stormy .stormy-wave:nth-child(odd) {
-  animation: stormy-wave-up 6s ease-in-out infinite;
+  animation: stormy-wave-up 9s ease-in-out infinite;
 }
 
 .stormy .stormy-wave:nth-child(even) {
-  animation: stormy-wave-down 6s ease-in-out infinite;
+  animation: stormy-wave-down 9s ease-in-out infinite;
 }

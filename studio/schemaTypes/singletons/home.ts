@@ -24,17 +24,22 @@ export default defineType({
       type: 'ptSlim',
     }),
     defineField({
-      name: 'homeIntroBgImage',
-      title: 'Home Intro Background Image',
+      name: 'homeBgImageLandscape',
+      title: 'Background Image - Landscape',
+      description: 'Recommended ratio: 4:3',
       type: 'image',
-      fields: [
-        defineField({
-          name: 'alt',
-          title: 'Alt text',
-          type: 'string',
-          description: 'Describe the image for accessibility compliance',
-        }),
-      ],
+    }),
+    defineField({
+      name: 'homeBgImagePortrait',
+      title: 'Background Image - Portrait',
+      description: 'Recommended ratio: 9:16',
+      type: 'image',
+    }),
+    defineField({
+      name: 'alt',
+      title: 'Background Image Alt text',
+      type: 'string',
+      description: 'Describe the background image for accessibility compliance',
     }),
     defineField({
       title: 'Page Builder',

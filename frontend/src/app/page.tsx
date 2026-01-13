@@ -14,7 +14,7 @@ export default async function Home() {
     <>
       <HomeHero data={data} />
       {pbSections && pbSections.length > 0 && (
-        <div className="mt-gut-400">
+        <div className="mt-gut-300">
           <PageBuilder pbSections={pbSections} />
         </div>
       )}
