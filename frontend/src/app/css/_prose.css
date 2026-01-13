@@ -43,5 +43,5 @@
   content: '•';
   position: absolute;
   left: -0.7em;
-  @apply text-red;
+  @apply text-yellow;
 }
